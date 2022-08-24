@@ -9,7 +9,7 @@ let inputData = {
     Ship_Date: "2019-10-20",
     Product_ID: "905669",
     Quantity: 1,
-    SKU: "Hidden Test Product "
+    SKU: "Hidden Test Product 2"
 }
 
 /*Anything Inside A Parenthesis*/
@@ -87,6 +87,26 @@ data.line_items.forEach(line_item   => {
 
 console.log(itemBeingShipped);
 
+
+
+let updateOrderPayload = JSON.stringify({
+    "shipment": {
+      "tracking_number": inputData.Tracking_Number,
+      "send_shipping_confirmation": true,
+      "ship_date": inputData.Ship_Date,
+      "note": "Lorem ipsum",
+      "shipping_method": inputData.Shipping_Method,
+      "line_items": [
+        {
+          "id": itemBeingShipped,
+          "quantity": inputData.Quantity
+        }
+      ]
+    }
+});
+
+
+
 async function updateOrder() {
 
     let url = `${currentStoreURL}api/v2.3.0/orders/${orderID}/shipments?token=${currentAPI_KEY}`
@@ -95,23 +115,9 @@ async function updateOrder() {
         method: 'POST',
         redirect: 'follow',
         headers: {
-            // 'Accept': 'application/json',
+            "Content-Type": "application/json"
             },
-        body: {
-            "shipment": {
-                "tracking_number": inputData.Tracking_Number,
-                "send_shipping_confirmation": true,
-                "ship_date": inputData.Ship_Date,
-                "note": "Lorem ipsum",
-                "shipping_method": inputData.Shipping_Method,
-                "line_items": [
-                    {
-                    "id": itemBeingShipped,
-                    "quantity": inputData.Quantity
-                    }
-                ]
-            }
-        }
+        body: updateOrderPayload,
         }).then(response => {
             console.log(response);
         })
