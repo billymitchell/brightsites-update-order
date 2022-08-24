@@ -3,5 +3,8 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "node-fetch": "^3.2.10"
+  },
+  "scripts": {
+    "start": "node --experimental-json-modules app.js"
   }
 }
