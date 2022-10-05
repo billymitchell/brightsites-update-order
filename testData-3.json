@@ -1,0 +1,43 @@
+{
+    "id": "f983dbfba174e830d1a8052fdd4f8987",
+    "received_at": "2022-10-04 02:57:56",
+    "processed_at": "2022-10-05 15:39:12",
+    "mail_attachments": [
+        {
+            "edwards_order_number": "4326689",
+            "customer_po": "FBLA-(7400)-24",
+            "shipment_date": "2022-10-03",
+            "tracking_number": "1Z4598130347825085",
+            "ship_via_description": "UPS GROUND RESIDENTIAL",
+            "stock_item": "6500 010 10 R",
+            "upc": "888950237604",
+            "shipto_name": "Centricity",
+            "shipto_address": "38201 W Indian School Rd",
+            "shipto_address2": "",
+            "shipto_city": "TONOPAH",
+            "shipto_state": "AZ",
+            "shipto_zipcode": "85354",
+            "item_qty": "2.000",
+            "edwards_customer_number": "E0769",
+            "package_id": ""
+        },
+        {
+            "edwards_order_number": "4326689",
+            "customer_po": "FBLA-(7400)-24",
+            "shipment_date": "2022-10-03",
+            "tracking_number": "1Z4598130347825085",
+            "ship_via_description": "UPS GROUND RESIDENTIAL",
+            "stock_item": "6500 010 12 R",
+            "upc": "888950237628",
+            "shipto_name": "Centricity",
+            "shipto_address": "38201 W Indian School Rd",
+            "shipto_address2": "",
+            "shipto_city": "TONOPAH",
+            "shipto_state": "AZ",
+            "shipto_zipcode": "85354",
+            "item_qty": "2.000",
+            "edwards_customer_number": "E0769",
+            "package_id": ""
+        }
+    ]
+}

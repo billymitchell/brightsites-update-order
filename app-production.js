@@ -1,9 +1,3 @@
-
-import fetch from 'node-fetch';
-import {} from 'dotenv/config'
-import testShipmentData from './testData-2.json';
-
-
 const storeMapping = {
     7400: {
         URL: "https://fbla.mybrightsites.com/",
@@ -17,7 +11,7 @@ const storeMapping = {
 
 
 // for each shipment item
-testShipmentData.mail_attachments.forEach(shipment => {
+JSON.parse(inputData.mailparser).mail_attachments.forEach(shipment => {
 
     let splitPO = shipment.customer_po.split("-")
 
@@ -178,32 +172,4 @@ testShipmentData.mail_attachments.forEach(shipment => {
 });
 
 
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// output = [
-//   {
-//     Request_Response: response,
-//     Request_Error: err,
-//   }
-// ];
+output = {id: 1, hello: "world"}
