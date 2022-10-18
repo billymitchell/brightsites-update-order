@@ -18,12 +18,11 @@ JSON.parse(inputData.mailparser).mail_attachments.forEach((shipment) => {
   let Order_ID = splitPO[2];
   let Orderdesk_Split_Order_ID = splitPO[3];
 
-  let splitDate = shipment.shipment_date.split('/');
-
-  let shipmentMonth = splitDate[0];
-  let shipmentDay = splitDate[1];
-  let shipmentYear = `20${splitDate[2]}`;
-  let formattedShipmentDate = `${shipmentYear}-${shipmentMonth}-${shipmentDay}`;
+  //   let splitDate = shipment.shipment_date.split('-');
+  //   let shipmentMonth = splitDate[0];
+  //   let shipmentDay = splitDate[1];
+  //   let shipmentYear = `20${splitDate[2]}`;
+  //   let formattedShipmentDate = `${shipmentYear}-${shipmentMonth}-${shipmentDay}`;
 
   // Replace spaces with dashes in SKUs
   let shipment_SKU_Dashes = shipment.stock_item.replace(/\s+/g, '-');
@@ -82,7 +81,7 @@ JSON.parse(inputData.mailparser).mail_attachments.forEach((shipment) => {
               shipment: {
                 tracking_number: shipment.tracking_number,
                 send_shipping_confirmation: true,
-                ship_date: formattedShipmentDate,
+                ship_date: shipment.shipment_date,
                 note: 'Updated Via Edwards Shipment Doc Through Centricity API',
                 shipping_method: shipment.shipping_method,
                 line_items: [
@@ -150,6 +149,5 @@ JSON.parse(inputData.mailparser).mail_attachments.forEach((shipment) => {
 });
 
 output = {
-  id: 1,
-  hello: 'world',
+  status: 'successfully executed to the end',
 };
